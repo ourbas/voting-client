@@ -15,11 +15,11 @@ export class VoteService {
   constructor(private httpClient: HttpClient) { }
 
   public getVote(pet: string): Observable<string> {
-    return this.httpClient.get<string>(`http://localhost:8080/votes/total/` + pet);
+    return this.httpClient.get<string>(`http://localhost/votes/total/` + pet);
   }
 
   public addVote(pet: string): void {
-    this.httpClient.post(`http://localhost:8080/votes`, {pet} , httpOptions).subscribe();
+    this.httpClient.post(`http://localhost/votes`, {pet} , httpOptions).subscribe();
 
   }
 }
