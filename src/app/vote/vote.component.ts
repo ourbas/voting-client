@@ -11,7 +11,7 @@ import { VoteService } from './vote.service';
 export class VoteComponent implements OnInit {
   @Input() pet: string;
 
-  nbVote: string;
+  nbVote = '--';
   constructor(private voteService: VoteService) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class VoteComponent implements OnInit {
     this.voteService.getVote(this.pet).subscribe(nb => this.nbVote = nb);
   }
 
-  addVote(): void {
+  public addVote(): void {
     this.voteService.addVote(this.pet);
   }
 }
