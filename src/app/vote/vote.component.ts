@@ -10,6 +10,7 @@ import { VoteService } from './vote.service';
 })
 export class VoteComponent implements OnInit {
   @Input() pet: string;
+  @Input() img: string;
 
   nbVote = '--';
   constructor(private voteService: VoteService) { }
